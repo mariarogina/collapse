@@ -4,17 +4,18 @@ import PropTypes from "prop-types";
 export default function Collapse(props) {
   return (
     <div>
-      <span>
-        {props.isExpanded ? props.children : ""}
+      <span className="btn" >
+        {props.isExpanded ? 
+        <div className = "show">{props.children}</div> : <div className = "hide"></div>}
         {props.isExpanded ? (
-          <a
+          <a 
             style={{ color: "red", fontSize: "1.8rem" }}
             onClick={() => props.onExpandedChange()}
           >
             {props.expandedLabel}
           </a>
         ) : (
-          <a
+          <a 
             style={{ color: "green", fontSize: "1.8rem" }}
             onClick={() => props.onExpandedChange()}
           >
